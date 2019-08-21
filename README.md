@@ -2,42 +2,49 @@
 
 This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsystem for Linux) 
 
-docker pull yourskc/skc_lsd
+1. Pull docker images 
 
-Build container
+   Pull the images from docker hub using the command:
 
-a. To build container in Linux OS you can use the command:
+   - *docker pull yourskc/skc_lsd*
 
-docker run -it --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash
 
-b. To build container in windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD you must install Xserver such as in here I use X410:
+2. Build container
 
-docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash
+  a. To build container in Linux OS you can use the command:
 
-*{name-container} : modify this name with your own
+  - *docker run -it --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash*
 
-Get in to container
+  b. To build container in windows OS with Installed WSL (Windows Subsystem for Linux) or using CMD you must install Xserver such as in here I use X410:
 
-a. Linux:
+  - *docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash*
 
-docker exec -it -e DISPLAY {name-container} bash
+***{name-container}** : modify this name with your own
 
-b. WSL
+3. Get in to container
 
-docker exec -it -e DISPLAY=docker.for.win.localhost:0.0 {name-container} bash
+  a. Linux:
 
-The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Follow this guide in the docker container:
+  - *docker exec -it -e DISPLAY {name-container} bash*
 
-a. run roscore
+  b. WSL
 
-roscore
+  - *docker exec -it -e DISPLAY=docker.for.win.localhost:0.0 {name-container} bash*
 
-b. run turtle simulator
+  The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Follow this guide in the docker container:
+  
+4. Test the image can work
 
-rosrun turtlesim turtlesim_node
+  a. run roscore
 
-c. run turtle key controller
+  - *roscore*
 
-rosrun turtlesim turtle_tele
+  b. run turtle simulator
+
+  - *rosrun turtlesim turtlesim_node*
+
+  c. run turtle key controller, use arrow keys to make the movements
+
+  - *rosrun turtlesim turtle_teleop_key*
 
 
