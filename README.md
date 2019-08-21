@@ -2,13 +2,13 @@
 
 This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsystem for Linux) 
 
-1. Pull docker images 
+1.   Pull docker images 
 
    Pull the images from docker hub using the command:
 
    - *docker pull yourskc/skc_lsd*
 
-2. Run container
+2.   Run container
 
   a. To run container in Linux OS:
 
@@ -20,12 +20,12 @@ This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsys
 
 ***{name-container}** : modify this name with your own
 
-3. Get in to container 
+3.   Get in to container 
    open termial window and input
    
   - *docker exec -it {name-container} bash*
 
-4. Test the image can work
+4.   Test the image can work
 
   The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Please repeat step 3 to open three terminal window and input the followings seperately:
   
