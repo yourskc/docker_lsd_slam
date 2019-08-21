@@ -20,8 +20,9 @@ This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsys
 
 ***{name}** : modify this name with your own
 
-### 3.   Get in to container 
-    open termial window and input
+### 3.   Get in to container
+
+   open termial window and input
    
    - *docker exec -it {name-container} bash*
 
