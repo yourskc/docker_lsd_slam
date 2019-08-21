@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER anto "skc1125@gmail.com"
+MAINTAINER yourskc "skc1125@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 USER root
