@@ -8,33 +8,27 @@ This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsys
 
    - *docker pull yourskc/skc_lsd*
 
+2. Run container
 
-2. Build container
+  a. To run container in Linux OS:
 
-  a. To run container in Linux OS you can use the command:
+  - *docker run -it --name {name-container} --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1  yourskc/skc_lsd*
 
-  - *docker run -it --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash*
+  b. To run container in windows 10 with WSL (Windows Subsystem for Linux), you must install X server such as in here I use X410:
 
-  b. To run container in windows OS with Installed WSL (Windows Subsystem for Linux), you must install Xserver such as in here I use X410:
-
-  - *docker run -it --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 --name {name-container} yourskc/skc_lsd /bin/bash*
+  - *docker run -it --name {name-container} --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 yourskc/skc_lsd*
 
 ***{name-container}** : modify this name with your own
 
-3. Get in to container
+3. Get in to container 
+   open termial window and input
+   
+  - *docker exec -it {name-container} bash*
 
-  a. Linux:
-
-  - *docker exec -it -e DISPLAY {name-container} bash*
-
-  b. WSL
-
-  - *docker exec -it -e DISPLAY=docker.for.win.localhost:0.0 {name-container} bash*
-
-  The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Follow this guide in the docker container:
-  
 4. Test the image can work
 
+  The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Please repeat step 3 to open three terminal window and input the followings seperately:
+  
   a. run roscore
 
   - *roscore*
