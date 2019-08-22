@@ -10,11 +10,11 @@ This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsys
 
 ### 2.   Run container
 
-   a. To run container in Linux OS:
+a. To run container in Linux OS:
 
    - *docker run -it --name **{name}** --privileged=true --net=host -e DISPLAY --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1  yourskc/skc_lsd*
     
-   b. To run container in windows 10 with WSL (Windows Subsystem for Linux), you must install X server such as in here I use X410:
+b. To run container in windows 10 with WSL (Windows Subsystem for Linux), you must install X server such as in here I use X410:
   
    - *docker run -it --name **{name}** --privileged=true --net=host -e DISPLAY=docker.for.win.localhost:0.0 --volume /tmp/.x11-unix --env QT_X11_NO_MITSHM=1 yourskc/skc_lsd*
   
@@ -30,15 +30,15 @@ This Image can use in Linux OS and windows OS with Installed WSL (Windows Subsys
 
    The easist way to test ROS(Robot Operating System) node is running the turtle simulator. Please repeat step 3 to open three terminal window and input the followings seperately:
   
-  a. run roscore
+a. run roscore
 
    - *roscore*
 
-  b. run turtle simulator
+b. run turtle simulator
 
    - *rosrun turtlesim turtlesim_node*
 
-  c. run turtle key controller, use arrow keys to make the movements
+c. run turtle key controller, use arrow keys to make the movements
 
    - *rosrun turtlesim turtle_teleop_key*
 
